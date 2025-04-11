@@ -1,0 +1,33 @@
+name: 🚀 Deploy website on push and pull request
+
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  web-deploy:
+    name: 🎉 Deploy Application
+    runs-on: ubuntu-latest
+    steps:
+    # Checkout the repository
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+
+    # Install NPM Packages
+    - name: 🚚 Installing NPM Package
+      run: npm install
+
+    # Sync files via FTP
+    - name: 📂 Sync files via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: zinka.blackbucks.me
+        username: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ftps
+        port: 21
+        security: loose

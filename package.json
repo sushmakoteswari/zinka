@@ -1,0 +1,48 @@
+{
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build --no-lint",
+    "start": "node server.js",
+    "export": "next export"
+  },
+  "dependencies": {
+    "@chakra-ui/accordion": "^2.3.1",
+    "@chakra-ui/alert": "^2.2.2",
+    "@chakra-ui/avatar": "^2.3.0",
+    "@chakra-ui/icons": "^2.1.1",
+    "@chakra-ui/modal": "^2.3.1",
+    "@chakra-ui/react": "^2.10.7",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@types/node": "^20.14.11",
+    "@types/react": "^18.3.3",
+    "cross-env": "^7.0.3",
+    "emotion-icons": "^3.27.0",
+    "express": "^4.19.2",
+    "framer-motion": "^11.18.2",
+    "google-map-react": "^2.2.1",
+    "next": "14.0.4",
+    "react": "^18.3.1",
+    "react-awesome-reveal": "^4.2.13",
+    "react-countup": "^6.5.3",
+    "react-dom": "^18.3.1",
+    "react-helmet": "^6.1.0",
+    "react-optimized-image": "^0.4.1",
+    "react-slick": "^0.30.2",
+    "react-waypoint": "^10.3.0",
+    "sharp": "^0.33.4",
+    "slick-carousel": "^1.8.1",
+    "smoothscroll-polyfill": "^0.4.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "@types/google-map-react": "^2.1.10",
+    "@types/google.maps": "^3.58.1",
+    "@types/react-slick": "^0.23.13",
+    "@types/smoothscroll-polyfill": "^0.3.4",
+    "eslint": "^9.24.0",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.0.0",
+    "typescript": "^5.5.4"
+  }
+}
