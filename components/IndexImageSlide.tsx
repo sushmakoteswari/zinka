@@ -84,32 +84,26 @@ const StyledBox = styled(Box)`
   }
 `;
 
-// Smooth scrolling function with type declaration
 const scrollToSection = (hash: string) => {
   const hashElement = document.getElementById(hash);
   if (hashElement) {
-    hashElement.scrollIntoView({
-      behavior: "smooth",
-    });
+    hashElement.scrollIntoView({ behavior: "smooth" });
   }
 };
 
-// Slide component interface
 interface SlideProps {
-  image: any;
-  mobileImage?: any;
+  image: string;
+  mobileImage?: string;
   header: string;
   body: React.ReactNode;
   button?: React.ReactNode;
 }
 
-// Slider props interface
 interface IndexSliderProps {
   asNavFor: any;
   sliderFunction: (slider: any) => void;
 }
 
-// Slide component
 const Slide = (props: SlideProps) => {
   return (
     <Box
@@ -133,22 +127,12 @@ const Slide = (props: SlideProps) => {
         pl={[6, null, 20]}
       >
         <VStack align="flex-start" spacing={[3, null, 5]} maxW={"750px"}>
-          <Text
-            fontWeight="600"
-            fontSize={["xl", null, "4xl"]}
-            letterSpacing={1}
-          >
-
+          <Text fontWeight="600" fontSize={["xl", null, "4xl"]} letterSpacing={1}>
             {props.header}
           </Text>
-          <Text
-            fontSize={["xs", null, "lg"]}
-            fontWeight="300"
-            letterSpacing={1}
-          >
+          <Text fontSize={["xs", null, "lg"]} fontWeight="300" letterSpacing={1}>
             {props.body}
           </Text>
-
           <Box>{props.button}</Box>
         </VStack>
       </Box>
@@ -156,7 +140,6 @@ const Slide = (props: SlideProps) => {
   );
 };
 
-// Main IndexSlider component
 const IndexSlider = (props: IndexSliderProps) => {
   const sliderRef = useRef<any>(null);
 
@@ -180,36 +163,23 @@ const IndexSlider = (props: IndexSliderProps) => {
     responsive: [
       {
         breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-        },
+        settings: { slidesToShow: 1, slidesToScroll: 1, infinite: true },
       },
       {
         breakpoint: 480,
-        settings: {
-          arrows: false,
-        },
+        settings: { arrows: false },
       },
     ],
   };
 
   return (
     <StyledBox>
-      <Slider
-        {...settings}
-        asNavFor={props.asNavFor}
-        ref={sliderRef}
-      >
+      <Slider {...settings} asNavFor={props.asNavFor} ref={sliderRef}>
         <Slide
-          image={require("../public/images/slidercrop.jpeg?webp&width=1000")}
-          mobileImage={require("../public/images/slidercrop2.jpeg")}
+          image="/images/slidercrop.jpeg"
+          mobileImage="/images/slidercrop2.jpeg"
           header="Zinka - Connecting Colleges to Corporate"
-          body="
-          First platform in India for management students.
-          We work on only one point to make you industry ready.
-        "
+          body="First platform in India for management students. We work on only one point to make you industry ready."
           button={
             <PrimaryButton
               letterSpacing="1px"
@@ -228,21 +198,16 @@ const IndexSlider = (props: IndexSliderProps) => {
         />
 
         <Slide
-          image={require("../public/images/slider2.jpeg?webp&width=1200")}
+          image="/images/slider2.jpeg"
           header="Zinka Industry ready Program "
           body={
             <Box fontSize={["xs", null, "md"]}>
               <Text fontWeight="600" fontSize={["md", null, "xl"]} mb={1}>
                 Prepare for a specific job role.
               </Text>
-              <Text mb={1}>
-                You choose your job instead of the job choose you.
-              </Text>
+              <Text mb={1}>You choose your job instead of the job choose you.</Text>
               <Text mt={4}>
-                Business Analyst | Digital Marketing Executive | Business
-                Development Executive| HR Executive | Operations Executive |
-                Project Manager | Product Manager | Supply Chain Consultant |
-                Sales Management.
+                Business Analyst | Digital Marketing Executive | Business Development Executive | HR Executive | Operations Executive | Project Manager | Product Manager | Supply Chain Consultant | Sales Management.
               </Text>
             </Box>
           }
@@ -262,13 +227,11 @@ const IndexSlider = (props: IndexSliderProps) => {
             </PrimaryButton>
           }
         />
+
         <Slide
-          image={require("../public/images/slider5.jpeg?webp&width=1200")}
+          image="/images/slider5.jpeg"
           header="Zinka Essentials Certification Program"
-          body="
-          Short courses for your overall instant knowledge with examples and case studies from
-          different industries.
-        "
+          body="Short courses for your overall instant knowledge with examples and case studies from different industries."
           button={
             <PrimaryButton
               letterSpacing="1px"
@@ -285,13 +248,11 @@ const IndexSlider = (props: IndexSliderProps) => {
             </PrimaryButton>
           }
         />
+
         <Slide
-          image={require("../public/images/Entrepreneurship.jpeg?webp&width=1200")}
+          image="/images/Entrepreneurship.jpeg"
           header="Project Management"
-          body="
-          Industry recognised 15 hour certificate course to prepare you to be future project
-          managers
-        "
+          body="Industry recognised 15 hour certificate course to prepare you to be future project managers"
           button={
             <PrimaryButton
               letterSpacing="1px"
